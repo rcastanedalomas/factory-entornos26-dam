@@ -14,4 +14,10 @@ public class Geometria {
         if (lado < 0) return -1;
         return lado * lado * lado;
     }
+
+    public static double areaRectangulo(double ancho, double alto) {
+        if (ancho < 0 || alto < 0) return -1;
+        return ancho * alto;
+    }
 }
+
