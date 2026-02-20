@@ -17,6 +17,7 @@ public class MenuCalculo {
             System.out.println("6) Media del array");
             System.out.println("7) MCD (dos enteros)");
             System.out.println("8) Mayor/Menor de lista (ArrayList)");
+            System.out.println("9) Ordenar descendente (burbuja)");
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -50,6 +51,9 @@ public class MenuCalculo {
                 ArrayList<Integer> lista = leerLista(sc);
                 System.out.println("Mayor = " + Calculo.mayor(lista));
                 System.out.println("Menor = " + Calculo.menor(lista));
+            } else if (opcion == 9) {
+                Ordenacion.burbujaDesc(array);
+                System.out.println("Array ordenado descendientemente.");
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
