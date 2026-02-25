@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MenuCalculo {
@@ -32,14 +33,14 @@ public class MenuCalculo {
                 System.out.println("Array creado.");
             } else if (opcion == 3) {
                 ArraysUtil.imprimir(array);
-            } else if (opcion == 4) {
+            } else if (opcion == 4 && VerificarContenidoArray(array)==false) {
                 Ordenacion.burbuja(array);
                 System.out.println("Array ordenado.");
-            } else if (opcion == 5) {
+            } else if (opcion == 5 && VerificarContenidoArray(array)==false) {
                 int x = Entrada.leerEntero(sc, "Valor a buscar: ");
                 int pos = Busqueda.lineal(array, x);
                 System.out.println("Posición = " + pos);
-            } else if (opcion == 6) {
+            } else if (opcion == 6 && VerificarContenidoArray(array)==false) {
                 double m = Estadistica.media(array);
                 System.out.println("Media = " + m);
             } else if (opcion == 7) {
@@ -82,4 +83,14 @@ public class MenuCalculo {
         }
         return lista;
     }
+    public static boolean VerificarContenidoArray (int[] array) {
+    	boolean ContenidoVacio=false;
+    		if (array==null) {
+    			ContenidoVacio=true;
+    		}
+    	if (ContenidoVacio==true) {
+			System.out.println("EL array no esta creado");
+		}
+    	return ContenidoVacio;
+	}
 }

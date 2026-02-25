@@ -21,8 +21,16 @@ public class ArraysUtil {
     }
 
     public static void swap(int[] a, int i, int j) {
-        // Imperfección intencionada: no valida índices
+    	
         if (a == null) return;
+        
+        // validamos si los indices i y j estan dentro de los limites
+        // si son menores que 0 o maior/igual que el tamño del array. paramos
+        
+        if (i<0 || i>= a.length || j<0 ||j>=a.length) {
+        	return;
+        }
+        	
         int tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
