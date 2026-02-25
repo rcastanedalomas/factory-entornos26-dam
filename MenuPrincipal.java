@@ -21,6 +21,8 @@ public class MenuPrincipal {
                 MenuCalculo.ejecutar(sc);
             } else if (opcion == 3) {
                 MenuUtilidades.ejecutar(sc);
+            } else if (opcion == 4) {
+                Entrada.leerEnteroEnRango(sc);
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
