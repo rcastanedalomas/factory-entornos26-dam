@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 
 public class MenuCalculo {
@@ -17,6 +18,7 @@ public class MenuCalculo {
             System.out.println("6) Media del array");
             System.out.println("7) MCD (dos enteros)");
             System.out.println("8) Mayor/Menor de lista (ArrayList)");
+            System.out.println("9) Ordenar descendente (burbuja)");
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -31,14 +33,14 @@ public class MenuCalculo {
                 System.out.println("Array creado.");
             } else if (opcion == 3) {
                 ArraysUtil.imprimir(array);
-            } else if (opcion == 4) {
+            } else if (opcion == 4 && VerificarContenidoArray(array)==false) {
                 Ordenacion.burbuja(array);
                 System.out.println("Array ordenado.");
-            } else if (opcion == 5) {
+            } else if (opcion == 5 && VerificarContenidoArray(array)==false) {
                 int x = Entrada.leerEntero(sc, "Valor a buscar: ");
                 int pos = Busqueda.lineal(array, x);
                 System.out.println("Posición = " + pos);
-            } else if (opcion == 6) {
+            } else if (opcion == 6 && VerificarContenidoArray(array)==false) {
                 double m = Estadistica.media(array);
                 System.out.println("Media = " + m);
             } else if (opcion == 7) {
@@ -50,6 +52,9 @@ public class MenuCalculo {
                 ArrayList<Integer> lista = leerLista(sc);
                 System.out.println("Mayor = " + Calculo.mayor(lista));
                 System.out.println("Menor = " + Calculo.menor(lista));
+            } else if (opcion == 9) {
+                Ordenacion.burbujaDesc(array);
+                System.out.println("Array ordenado descendientemente.");
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
@@ -78,4 +83,14 @@ public class MenuCalculo {
         }
         return lista;
     }
+    public static boolean VerificarContenidoArray (int[] array) {
+    	boolean ContenidoVacio=false;
+    		if (array==null) {
+    			ContenidoVacio=true;
+    		}
+    	if (ContenidoVacio==true) {
+			System.out.println("EL array no esta creado");
+		}
+    	return ContenidoVacio;
+	}
 }
