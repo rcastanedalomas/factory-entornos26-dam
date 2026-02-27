@@ -17,6 +17,7 @@ public class Entrada {
     public static int leerEnteroEnRango() {
         Scanner sc = new Scanner(System.in);
 
+<<<<<<< HEAD
         boolean minMax = false;
         int min = 0;
         int max = 0;
@@ -84,6 +85,26 @@ public class Entrada {
 			}
 		}
 	}
+=======
+    public static double leerDouble(Scanner sc, String msg) {
+        System.out.print(msg);
+
+        while (true) {
+            String texto = sc.nextLine().trim();
+
+            // Permitir coma o punto como separador decimal
+            texto = texto.replace(",", ".");
+
+            try {
+                double v = Double.parseDouble(texto);
+                return v;
+            } catch (NumberFormatException e) {
+                System.out.print("Introduce un número válido. " + msg);
+            }
+        }
+    }
+
+>>>>>>> origin/develop
 
     public static String leerTexto(Scanner sc, String msg) {
         System.out.print(msg);
