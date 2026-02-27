@@ -11,6 +11,7 @@ public class MenuPrincipal {
             System.out.println("1) Geometría");
             System.out.println("2) Cálculo");
             System.out.println("3) Utilidades");
+            System.out.println("4) Leer entero en rango");
             System.out.println("0) Salir");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
