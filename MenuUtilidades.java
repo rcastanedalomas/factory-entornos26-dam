@@ -15,6 +15,7 @@ public class MenuUtilidades {
             System.out.println("6) Kilómetros a millas");
             System.out.println("7) Kilómetros a millas a la inversa");
             System.out.println("8) Fahrenheit a Celsius");
+            System.out.println("9) Contar palabras");
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -45,6 +46,10 @@ public class MenuUtilidades {
             }else if (opcion == 8) {
                 double  c = Entrada.leerDouble(sc, "Farenheit: ");
                 System.out.println("C = " + Conversiones.fahrenheitACelsius(c));
+            }
+            else if (opcion == 9) {
+            	 String t = Entrada.leerTexto(sc, "Texto: ");
+            	 System.out.println("Palabras = " + Cadenas.contarPalabras(t));
             }
             else if (opcion != 0) {
                 System.out.println("Opción no válida.");
