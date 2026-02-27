@@ -16,14 +16,22 @@ public class Entrada {
 
     public static double leerDouble(Scanner sc, String msg) {
         System.out.print(msg);
-        while (!sc.hasNextDouble()) {
-            sc.nextLine();
-            System.out.print("Introduce un número válido. " + msg);
+
+        while (true) {
+            String texto = sc.nextLine().trim();
+
+            // Permitir coma o punto como separador decimal
+            texto = texto.replace(",", ".");
+
+            try {
+                double v = Double.parseDouble(texto);
+                return v;
+            } catch (NumberFormatException e) {
+                System.out.print("Introduce un número válido. " + msg);
+            }
         }
-        double v = sc.nextDouble();
-        sc.nextLine();
-        return v;
     }
+
 
     public static String leerTexto(Scanner sc, String msg) {
         System.out.print(msg);

@@ -15,6 +15,8 @@ public class MenuUtilidades {
             System.out.println("6) Kilómetros a millas");
             System.out.println("7) Kilómetros a millas a la inversa");
             System.out.println("8) Fahrenheit a Celsius");
+            System.out.println("9) redondeamos 2 los decimales");
+
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -36,6 +38,7 @@ public class MenuUtilidades {
                 long s = Fechas.segundosDesde(dt);
                 System.out.println("Segundos = " + s);
                 System.out.println("Formateado = " + Fechas.formatearSegundos(s));
+
             } else   if (opcion == 6) {
                 double km = Entrada.leerDouble(sc, "Kilómetros: ");
                 System.out.println("Millas = " + Conversiones.kmAMillas(km));
@@ -46,6 +49,15 @@ public class MenuUtilidades {
                 double  c = Entrada.leerDouble(sc, "Farenheit: ");
                 System.out.println("C = " + Conversiones.fahrenheitACelsius(c));
             }
+
+            
+            else if (opcion == 9) {
+                double valor = Entrada.leerDouble(sc, "Número a redondear: ");
+                double redondeado = Formato.redondear2(valor);
+                System.out.println("Resultado redondeado = " + redondeado);
+            }
+
+
             else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
