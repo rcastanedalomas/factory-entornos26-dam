@@ -35,4 +35,11 @@ public class Cadenas {
         }
         return true;
     }
+     //FUNCION 9
+    public static int contarPalabras(String texto) {
+    	if (texto == null || texto.trim().isEmpty()) return 0;
+
+    	String[] palabras = texto.trim().split(" ");
+    	return palabras.length;
+    }
 }
