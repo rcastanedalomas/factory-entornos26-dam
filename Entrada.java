@@ -14,8 +14,7 @@ public class Entrada {
         return v;
     }
     
-    public static int leerEnteroEnRango() {
-        Scanner sc = new Scanner(System.in);
+    public static int leerEnteroEnRango(Scanner sc) {
 
         boolean minMax = false;
         int min = 0;
@@ -68,22 +67,6 @@ public class Entrada {
 
         return num;
     }
-
-	public static double leerDouble(Scanner sc, String msg) {
-		System.out.print(msg);
-
-		while (true) {
-			String texto = sc.nextLine().trim();
-			texto = texto.replace(",", ".");
-
-			try {
-				double v = Double.parseDouble(texto);
-				return v;
-			} catch (NumberFormatException e) {
-				System.out.print("Introduce un número válido. " + msg);
-			}
-		}
-	}
 
     public static double leerDouble(Scanner sc, String msg) {
         System.out.print(msg);
