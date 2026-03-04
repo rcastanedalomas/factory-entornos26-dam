@@ -1,3 +1,4 @@
+
 import java.util.Scanner;
 
 public class MenuGeometria {
@@ -10,6 +11,7 @@ public class MenuGeometria {
             System.out.println("2) Área cuadrado");
             System.out.println("3) Volumen cubo");
             System.out.println("4) Área rectángulo");
+            System.out.println("5) Área cilindro");
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -30,6 +32,11 @@ public class MenuGeometria {
                 double a = Entrada.leerDouble(sc, "Ancho: ");
                 double b = Entrada.leerDouble(sc, "Alto: ");
                 double res = Geometria.areaRectangulo(a, b);
+                mostrarDouble(res);
+            } else if (opcion == 5) {
+                double r = Entrada.leerDouble(sc, "Radio: ");
+                double h = Entrada.leerDouble(sc, "Altura: ");
+                double res = Geometria.areaCilindro(r, h);
                 mostrarDouble(res);
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
