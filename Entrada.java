@@ -7,23 +7,104 @@ public class Entrada {
         System.out.print(msg);
         while (!sc.hasNextInt()) {
             sc.nextLine();
-            System.out.print("Introduce un entero válido. " + msg);
+            System.out.print("Introduce un entero válido. ");
         }
         int v = sc.nextInt();
         sc.nextLine();
         return v;
     }
+    
+    public static int leerEnteroEnRango() {
+        Scanner sc = new Scanner(System.in);
 
+<<<<<<< HEAD
+        boolean minMax = false;
+        int min = 0;
+        int max = 0;
+        int num = 0;
+
+        while (!minMax) {
+
+            System.out.print("Introduce el mínimo del rango: ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Error: debes introducir un número entero...");
+                sc.next(); 
+                System.out.print("Introduce el mínimo del rango: ");
+            }
+            min = sc.nextInt();
+
+            System.out.print("Introduce el máximo del rango: ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Error: debes introducir un número entero...");
+                sc.next();
+                System.out.print("Introduce el máximo del rango: ");
+            }
+            max = sc.nextInt();
+
+            if (min > max) {
+                System.out.println("El rango (" + min + ") - (" + max + ") es incorrecto...");
+            } else {
+                minMax = true;
+            }
+        }
+
+        boolean dentroRango = false;
+
+        while (!dentroRango) {
+
+            System.out.print("Introduce un número dentro del rango (" + min + ") - (" + max + "): ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Error: debes introducir un número entero...");
+                sc.next();
+                System.out.print("Introduce un número dentro del rango (" + min + ") - (" + max + "): ");
+            }
+            num = sc.nextInt();
+
+            if (num < min || num > max) {
+                System.out.println("El número no está dentro del rango...");
+            } else {
+                dentroRango = true;
+            }
+        }
+
+        return num;
+    }
+
+	public static double leerDouble(Scanner sc, String msg) {
+		System.out.print(msg);
+
+		while (true) {
+			String texto = sc.nextLine().trim();
+			texto = texto.replace(",", ".");
+
+			try {
+				double v = Double.parseDouble(texto);
+				return v;
+			} catch (NumberFormatException e) {
+				System.out.print("Introduce un número válido. " + msg);
+			}
+		}
+	}
+=======
     public static double leerDouble(Scanner sc, String msg) {
         System.out.print(msg);
-        while (!sc.hasNextDouble()) {
-            sc.nextLine();
-            System.out.print("Introduce un número válido. " + msg);
+
+        while (true) {
+            String texto = sc.nextLine().trim();
+
+            // Permitir coma o punto como separador decimal
+            texto = texto.replace(",", ".");
+
+            try {
+                double v = Double.parseDouble(texto);
+                return v;
+            } catch (NumberFormatException e) {
+                System.out.print("Introduce un número válido. " + msg);
+            }
         }
-        double v = sc.nextDouble();
-        sc.nextLine();
-        return v;
     }
+
+>>>>>>> origin/develop
 
     public static String leerTexto(Scanner sc, String msg) {
         System.out.print(msg);
