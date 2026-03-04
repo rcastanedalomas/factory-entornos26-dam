@@ -17,7 +17,6 @@ public class Entrada {
     public static int leerEnteroEnRango() {
         Scanner sc = new Scanner(System.in);
 
-<<<<<<< HEAD
         boolean minMax = false;
         int min = 0;
         int max = 0;
@@ -85,7 +84,7 @@ public class Entrada {
 			}
 		}
 	}
-=======
+
     public static double leerDouble(Scanner sc, String msg) {
         System.out.print(msg);
 
@@ -104,7 +103,6 @@ public class Entrada {
         }
     }
 
->>>>>>> origin/develop
 
     public static String leerTexto(Scanner sc, String msg) {
         System.out.print(msg);
