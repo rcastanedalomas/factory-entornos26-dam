@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.Scanner;
 
 public class MenuCalculo {
@@ -29,32 +28,45 @@ public class MenuCalculo {
                 int n = Entrada.leerEntero(sc, "Tamaño: ");
                 int min = Entrada.leerEntero(sc, "Mínimo: ");
                 int max = Entrada.leerEntero(sc, "Máximo: ");
-                array = GeneradorDatos.arrayAleatorio(n, min, max);
-                System.out.println("Array creado.");
-            } else if (opcion == 3) {
+
+                if (n <= 0) {
+                    System.out.println("Error: El tamaño debe ser mayor que 0.");
+                } else {
+                    array = GeneradorDatos.arrayAleatorio(n, min, max);
+                    System.out.println("Array creado.");
+                }
+
+            } else if (opcion == 3 && VerificarContenidoArray(array)==false) {
                 ArraysUtil.imprimir(array);
+
             } else if (opcion == 4 && VerificarContenidoArray(array)==false) {
                 Ordenacion.burbuja(array);
                 System.out.println("Array ordenado.");
+
             } else if (opcion == 5 && VerificarContenidoArray(array)==false) {
                 int x = Entrada.leerEntero(sc, "Valor a buscar: ");
                 int pos = Busqueda.lineal(array, x);
                 System.out.println("Posición = " + pos);
+
             } else if (opcion == 6 && VerificarContenidoArray(array)==false) {
                 double m = Estadistica.media(array);
                 System.out.println("Media = " + m);
+
             } else if (opcion == 7) {
                 int a = Entrada.leerEntero(sc, "a: ");
                 int b = Entrada.leerEntero(sc, "b: ");
                 int res = Calculo.mcd(a, b);
                 System.out.println("MCD = " + res);
+
             } else if (opcion == 8) {
                 ArrayList<Integer> lista = leerLista(sc);
                 System.out.println("Mayor = " + Calculo.mayor(lista));
                 System.out.println("Menor = " + Calculo.menor(lista));
-            } else if (opcion == 9) {
+
+            } else if (opcion == 9 && VerificarContenidoArray(array)==false) {
                 Ordenacion.burbujaDesc(array);
                 System.out.println("Array ordenado descendientemente.");
+
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
@@ -64,7 +76,11 @@ public class MenuCalculo {
 
     private static int[] leerArrayManual(Scanner sc) {
         int n = Entrada.leerEntero(sc, "Tamaño: ");
-        if (n <= 0) return null;
+
+        if (n <= 0) {
+            System.out.println("Error: El tamaño debe ser mayor que 0.");
+            return new int[0]; // ← ya no devolvemos null
+        }
 
         int[] a = new int[n];
         for (int i = 0; i < n; i++) {
@@ -76,21 +92,23 @@ public class MenuCalculo {
     private static ArrayList<Integer> leerLista(Scanner sc) {
         int n = Entrada.leerEntero(sc, "Cantidad: ");
         ArrayList<Integer> lista = new ArrayList<>();
-        if (n <= 0) return lista;
+
+        if (n <= 0) {
+            System.out.println("Error: La cantidad debe ser mayor que 0.");
+            return lista;
+        }
 
         for (int i = 1; i <= n; i++) {
             lista.add(Entrada.leerEntero(sc, "Número " + i + ": "));
         }
         return lista;
     }
-    public static boolean VerificarContenidoArray (int[] array) {
-    	boolean ContenidoVacio=false;
-    		if (array==null) {
-    			ContenidoVacio=true;
-    		}
-    	if (ContenidoVacio==true) {
-			System.out.println("EL array no esta creado");
-		}
-    	return ContenidoVacio;
-	}
+
+    public static boolean VerificarContenidoArray(int[] array) {
+        if (array == null || array.length == 0) {
+            System.out.println("El array no está creado o está vacío.");
+            return true;
+        }
+        return false;
+    }
 }
