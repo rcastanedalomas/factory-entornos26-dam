@@ -12,6 +12,7 @@ public class MenuGeometria {
             System.out.println("3) Volumen cubo");
             System.out.println("4) Área rectángulo");
             System.out.println("5) Área cilindro");
+            System.out.println("6) Área triángulo");
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -38,7 +39,14 @@ public class MenuGeometria {
                 double h = Entrada.leerDouble(sc, "Altura: ");
                 double res = Geometria.areaCilindro(r, h);
                 mostrarDouble(res);
-            } else if (opcion != 0) {
+            } else if (opcion == 6) {
+                double b = Entrada.leerDouble(sc, "Base: ");
+                double h = Entrada.leerDouble(sc, "Altura: ");
+                double res = Geometria.areaTriangulo(b, h);
+                mostrarDouble(res); }
+
+            
+            else if (opcion != 0) {
                 System.out.println("Opción no válida.");
             }
 
