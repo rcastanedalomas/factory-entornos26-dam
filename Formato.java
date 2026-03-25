@@ -17,5 +17,14 @@ public class Formato {
 
         int espacios = ancho - s.length();
         return repetir(' ', espacios) + s;
+    
     }
+    
+    
+    public static void mostrarDouble(double res) {
+        if (res < 0) System.out.println("Resultado no válido.");
+        else System.out.println("Resultado = " + res);
+    }
+    
 }
+

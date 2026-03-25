@@ -2,3 +2,23 @@
 .classpath
 
 .project
+/ArraysUtil.class
+/Busqueda.class
+/Cadenas.class
+/Calculo.class
+/Constantes.class
+/Conversiones.class
+/Entrada.class
+/Estadistica.class
+/Fechas.class
+/Formato.class
+/GeneradorDatos.class
+/Geometria.class
+/Matrices.class
+/MenuCalculo.class
+/MenuGeometria.class
+/MenuPrincipal.class
+/MenuUtilidades.class
+/Ordenacion.class
+/Registro.class
+/Validaciones.class

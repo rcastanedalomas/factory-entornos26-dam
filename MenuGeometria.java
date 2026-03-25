@@ -20,30 +20,30 @@ public class MenuGeometria {
             if (opcion == 1) {
                 double r = Entrada.leerDouble(sc, "Radio: ");
                 double res = Geometria.areaCirculo(r);
-                mostrarDouble(res);
+                Formato.mostrarDouble(res);
             } else if (opcion == 2) {
                 double l = Entrada.leerDouble(sc, "Lado: ");
                 double res = Geometria.areaCuadrado(l);
-                mostrarDouble(res);
+                Formato.mostrarDouble(res);
             } else if (opcion == 3) {
                 double l = Entrada.leerDouble(sc, "Lado: ");
                 double res = Geometria.volumenCubo(l);
-                mostrarDouble(res);
+                Formato.mostrarDouble(res);
             } else if (opcion == 4) {
                 double a = Entrada.leerDouble(sc, "Ancho: ");
                 double b = Entrada.leerDouble(sc, "Alto: ");
                 double res = Geometria.areaRectangulo(a, b);
-                mostrarDouble(res);
+                Formato.mostrarDouble(res);
             } else if (opcion == 5) {
                 double r = Entrada.leerDouble(sc, "Radio: ");
                 double h = Entrada.leerDouble(sc, "Altura: ");
                 double res = Geometria.areaCilindro(r, h);
-                mostrarDouble(res);
+                Formato.mostrarDouble(res);
             } else if (opcion == 6) {
                 double b = Entrada.leerDouble(sc, "Base: ");
                 double h = Entrada.leerDouble(sc, "Altura: ");
                 double res = Geometria.areaTriangulo(b, h);
-                mostrarDouble(res); }
+                Formato.mostrarDouble(res); }
 
             
             else if (opcion != 0) {
@@ -53,8 +53,5 @@ public class MenuGeometria {
         } while (opcion != 0);
     }
 
-    private static void mostrarDouble(double res) {
-        if (res < 0) System.out.println("Resultado no válido.");
-        else System.out.println("Resultado = " + res);
-    }
+    
 }
