@@ -17,6 +17,7 @@ public class MenuUtilidades {
             System.out.println("8) Fahrenheit a Celsius");
             System.out.println("9) Contar palabras");
             System.out.println("10) Redondear a 2 decimales");
+            System.out.println("11) Kilómetros a metros");        
             System.out.println("0) Volver");
 
             opcion = Entrada.leerEntero(sc, "Opción: ");
@@ -39,27 +40,25 @@ public class MenuUtilidades {
 
             } else if (opcion == 5) {
                 LocalDateTime dt = Entrada.leerFechaHoraSimple(sc, "Fecha y hora (AAAA-MM-DD HH:MM): ");
-
                 if (dt == null) {
-                 System.out.println("Formato inválido");
-            } 
-            else {
-                long s = Fechas.segundosDesde(dt);
-                System.out.println("Segundos = " + s);
-                System.out.println("Formateado = " + Fechas.formatearSegundos(s));
-             }
+                    System.out.println("Formato inválido");
+                } else {
+                    long s = Fechas.segundosDesde(dt);
+                    System.out.println("Segundos = " + s);
+                    System.out.println("Formateado = " + Fechas.formatearSegundos(s));
+                }
             
             } else if (opcion == 6) {
                 double km = Entrada.leerDouble(sc, "Kilómetros: ");
                 System.out.println("Millas = " + Conversiones.kmAMillas(km));
 
             } else if (opcion == 7) {
-                double km = Entrada.leerDouble(sc, "Millas: ");
-                System.out.println("Kilometros = " + Conversiones.millasKm(km));
+                double mll = Entrada.leerDouble(sc, "Millas: ");
+                System.out.println("Kilometros = " + Conversiones.millasKm(mll));
 
             } else if (opcion == 8) {
-                double c = Entrada.leerDouble(sc, "Farenheit: ");
-                System.out.println("C = " + Conversiones.fahrenheitACelsius(c));
+                double f = Entrada.leerDouble(sc, "Fahrenheit: ");
+                System.out.println("C = " + Conversiones.fahrenheitACelsius(f));
 
             } else if (opcion == 9) {
                 String t = Entrada.leerTexto(sc, "Texto: ");
@@ -69,6 +68,12 @@ public class MenuUtilidades {
                 double valor = Entrada.leerDouble(sc, "Número a redondear: ");
                 double redondeado = Formato.redondear2(valor);
                 System.out.println("Resultado redondeado = " + redondeado);
+
+
+            } else if (opcion == 11) {
+                double km = Entrada.leerDouble(sc, "Kilómetros: ");
+                System.out.println("Metros = " + Conversiones.kmAMetros(km));
+
 
             } else if (opcion != 0) {
                 System.out.println("Opción no válida.");
